@@ -4,8 +4,8 @@ use movies;
 select name
 from moviestar
 where gender = 'F' and name in (select name
-								from movieexec
-								where networth > 10000000)
+				from movieexec
+				where networth > 10000000)
 --1.2
 select name
 from moviestar
@@ -40,8 +40,8 @@ where price >= all (select price from pc
 select distinct maker
 from product
 where model in (select model from printer where color = 'y' and price <= all (select price
-																				from printer
-																				where color = 'y'))
+										from printer
+										where color = 'y'))
 
 --2.5
 select distinct maker
