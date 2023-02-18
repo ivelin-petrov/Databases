@@ -1,4 +1,4 @@
 # Databases
 Core course at FMI
 
-The programs use the databases from the folder 'Databases- Movies, PC, Ships'.
+The programs and examples use the databases from the folder 'Databases- Movies, PC, Ships'.
