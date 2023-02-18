@@ -35,11 +35,11 @@ left join outcomes on ships.name = outcomes.ship and result = 'ok'
 group by class
 having count(distinct ships.name) >= 3
 
-select class, count(distinct ship) -- ïîâòîðåíèÿ èìà, àêî äàäåí êîðàá å áèë ok â íÿêîëêî áèòêè
+select class, count(distinct ship)
 from ships
 left join outcomes on name = ship and result = 'ok'
 group by class
-having count(distinct name) >= 3; -- ïîâòîðåíèÿ èìà, àêî äàäåí êîðàá å áèë ok â íÿêîëêî áèòêè
+having count(distinct name) >= 3;
 
 --3.9
 select distinct battle, year(date) as year,
