@@ -31,8 +31,8 @@ delete
 from starsin
 where movietitle like 'Star%'
 	and starname not in (select starname
-						from starsin
-						where movietitle not like 'Star%');
+				from starsin
+				where movietitle not like 'Star%');
 
 use pc;
 go
@@ -42,9 +42,9 @@ from pc
 where model in (select model
 				from product
 				where maker not in (select maker
-									from product
-									join printer on product.model = printer.model
-									where color = 'y'));
+							from product
+							join printer on product.model = printer.model
+							where color = 'y'));
 
 go
 
@@ -77,13 +77,13 @@ as
 begin
 	delete from pc
 	where code in (select code
-					from deleted
-					where type = 'PC');
+			from deleted
+			where type = 'PC');
 
 	delete from laptop
 	where code in (select code
-					from deleted
-					where type = 'Laptop');
+			from deleted
+			where type = 'Laptop');
 
 end;
 
