@@ -52,7 +52,6 @@ select distinct maker
 from product
 join pc on product.model = pc.model
 where price = (select MAX(price) from pc)
---where price >= all (select price from pc) àêî íÿìà null ñòîéíîñòè
 
 --1.9
 select speed, AVG(price)
