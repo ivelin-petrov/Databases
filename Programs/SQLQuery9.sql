@@ -26,7 +26,7 @@ select * from moviestar_movieCount
 drop view moviestar_movieCount
 
 --1.3
---νε
+--Γ­Γ₯
 
 use pc;
 
