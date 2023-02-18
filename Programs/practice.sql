@@ -1,4 +1,3 @@
--- äà ñå íàïèøå èçãëåä, êîéòî íàìèðà èìåíàòà íà âñè÷êè àêòüîðè, èãðàëè âúâ ôèëìè ñ äúëæèíà ïîä 120 ìèíóòè èëè ñ íåèçâåñòíà äúëæèíà
 use movies;
 
 go
@@ -15,9 +14,6 @@ go
 select * from actors where starname like 'Bruce%'
 
 
--- Äà ñå íàïðàâè âúçìîæíî èçòðèâàíåòî íà ðåäîâå â èçãëåäà.
--- Ïðè èçïúëíåíèå íà delete çàÿâêà âúðõó stars äà ñå èçòðèâàò ñúîòâåòíèòå ðåäîâå îò starsin.
-
 go
 
 create trigger deleteActors
@@ -33,17 +29,14 @@ go
 drop view actors
 drop trigger deleteActors
 
--- äà ñå èçòðèÿò âñè÷êè ó÷àñòèÿ íà ôèëìîâè çâåçäè (ðåäîâå â StarsIn)
--- âúâ ôèëìè, ÷èåòî çàãëàâèå çàïî÷âà ñúñ Star, íî ñàìî àêî íå ñà èãðàëè âúâ ôèëìè, íåçàïî÷âàùè ñúñ Star.
 
 delete
 from starsin
 where movietitle like 'Star%' and starname not in (select starname 
-												   from starsin
-												   where movietitle not like 'Star%')
+							from starsin
+							where movietitle not like 'Star%')
 
 
--- äà ñå èçòðèÿò âñè÷êè êîìïþòðè, ïðîèçâåäåíè îò ïðîèçâîäèòåë, êîéòî íå ïðîèçâåæäà öâåòíè ïðèíòåðè
 use pc;
 
 delete
@@ -51,13 +44,9 @@ from pc
 where model in (select model 
 			    from product 
 				where maker not in (select maker
-									from product
-									join printer on product.model = printer.model
-									where color = 'y'))
-
--- à) äà ñå ñúçäàäå èçãëåä, êîéòî ïîêàçâà êîäîâåòå, ìîäåëèòå, ïðîöåñîðèòå, RAM ïàìåòòà, õàðääèñêà è öåíàòà
--- íà âñè÷êè PC-òà è ëàïòîïè. Äà èìà äîïúëíèòåëíà êîëîíà, êîÿòî óêàçâà òèïà íà ïðîäóêòà - PC èëè Laptop.
--- á) äà ñå íàïðàâè âúçìîæíî èçïúëíåíèåòî íà DELETE çàÿâêè âúðõó òîçè èçãëåä
+							from product
+							join printer on product.model = printer.model
+							where color = 'y'))
 
 go
 
